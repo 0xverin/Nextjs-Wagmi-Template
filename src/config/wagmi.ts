@@ -21,7 +21,7 @@ const needsInjectedWalletFallback =
 
 const connectors = connectorsForWallets([
     {
-        groupName: "Recommended",
+        groupName: "Popular",
         wallets: [
             wallet.metaMask({ chains, shimDisconnect: true }),
             wallet.brave({ chains, shimDisconnect: true }),
@@ -30,6 +30,10 @@ const connectors = connectorsForWallets([
             wallet.coinbase({ appName: "Coinbase", chains }),
             ...(needsInjectedWalletFallback ? [wallet.injected({ chains, shimDisconnect: true })] : []),
         ],
+    },
+    {
+        groupName: "Other",
+        wallets: [wallet.trust({ chains, shimDisconnect: true }), wallet.steak({ chains }), wallet.imToken({ chains })],
     },
 ]);
 
