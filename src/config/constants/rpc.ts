@@ -21,17 +21,12 @@ export class RPC {
             case ChainId.ETHEREUM:
                 return this._get({
                     key: `REACT_APP_ETHEREUM_NODE_URL`,
-                    fallback: "https://eth-mainnet.alchemyapi.io/v2/_gg7wSSi0KMBsdKnGVfHDueq6xMB9EkC",
+                    fallback: `https://eth-mainnet.alchemyapi.io/v2/${process.env.NEXT_PUBLIC_ALCHEMY_ID}`,
                 });
             case ChainId.RINKEBY:
                 return this._get({
                     key: `REACT_APP_RINKEBY_NODE_URL`,
-                    fallback: "https://eth-rinkeby.alchemyapi.io/v2/_gg7wSSi0KMBsdKnGVfHDueq6xMB9EkC",
-                });
-            case ChainId.BSC:
-                return this._get({
-                    key: `REACT_APP_BSC_NODE_URL`,
-                    fallback: "https://bsc-dataseed1.binance.org",
+                    fallback: `https://eth-rinkeby.alchemyapi.io/v2/${process.env.NEXT_PUBLIC_ALCHEMY_ID}`,
                 });
         }
     };
