@@ -36,3 +36,5 @@ const createDynamicContract = <TContract extends Contract = Contract>(ABI: Contr
 export const useStaticExampleContract = createStaticContract<Example>(ExampleABI);
 
 // export const useDynamicExampleContract = createDynamicContract<type>(ABI);
+
+export const useDynamicExampleContract = createDynamicContract<Example>(ExampleABI);
