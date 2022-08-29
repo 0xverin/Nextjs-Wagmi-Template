@@ -7,7 +7,7 @@
         "build": "next build",
         "start": "next start",
         "lint": "next lint",
-        "typechain": "typechain --out-dir src/config/abi/types --target=ethers-v5 \"src/config/abi/*.json\""
+        "typechain": "typechain --out-dir src/config/abis/types --target=ethers-v5 \"src/config/abis/*.json\""
     },
     "dependencies": {
         "@rainbow-me/rainbowkit": "^0.5.0",

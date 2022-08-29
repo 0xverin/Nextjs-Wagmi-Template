@@ -1,10 +1,11 @@
 import { Contract, ContractInterface } from "@ethersproject/contracts";
+import ExampleABI from "config/abis/example.json";
+import { Example } from "config/abis/types";
 import { AddressMap } from "config/constants/addresses";
 import { ChainId, defaultChainId } from "config/constants/chainId";
 import { Providers } from "config/providers";
 import { useMemo } from "react";
 import { useNetwork, useProvider, useSigner } from "wagmi";
-
 export const createStaticContract = <TContract extends Contract = Contract>(ABI: ContractInterface) => {
     return (address: string, chainId: ChainId) => {
         const provider = Providers.getStaticProvider(chainId);
@@ -31,5 +32,7 @@ const createDynamicContract = <TContract extends Contract = Contract>(ABI: Contr
 };
 
 // export const useStaticExampleContract = createStaticContract<type>(ABI);
+
+export const useStaticExampleContract = createStaticContract<Example>(ExampleABI);
 
 // export const useDynamicExampleContract = createDynamicContract<type>(ABI);
