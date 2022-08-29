@@ -11,6 +11,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
     useEffect(() => setMounted(true), []);
     if (!mounted) return null;
+
     return (
         <WagmiConfig client={wagmiClient}>
             <RainbowKitProvider chains={chains}>
