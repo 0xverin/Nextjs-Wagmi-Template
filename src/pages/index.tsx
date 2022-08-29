@@ -1,7 +1,6 @@
-import { ConnectWallet } from "components/ConnectWallet";
+import { BasciConnect } from "components/ConnectWallet";
 import type { NextPage } from "next";
 import Head from "next/head";
-
 const Home: NextPage = () => {
     return (
         <div>
@@ -11,7 +10,7 @@ const Home: NextPage = () => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <div>
-                <ConnectWallet></ConnectWallet>
+                <BasciConnect></BasciConnect>
             </div>
         </div>
     );

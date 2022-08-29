@@ -1,7 +1,7 @@
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import Image from "next/image";
 
-export const ConnectWallet = () => {
+export const CustomConnect = () => {
     return (
         <ConnectButton.Custom>
             {({
@@ -86,4 +86,8 @@ export const ConnectWallet = () => {
             }}
         </ConnectButton.Custom>
     );
+};
+
+export const BasciConnect = () => {
+    return <ConnectButton></ConnectButton>;
 };
