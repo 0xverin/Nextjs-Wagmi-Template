@@ -1,3 +1,4 @@
+import { env } from "../env";
 import { ChainId } from "./chainId";
 
 export class RPC {
@@ -21,12 +22,12 @@ export class RPC {
             case ChainId.ETHEREUM:
                 return this._get({
                     key: `REACT_APP_ETHEREUM_NODE_URL`,
-                    fallback: `https://eth-mainnet.alchemyapi.io/v2/${process.env.NEXT_PUBLIC_ALCHEMY_ID}`,
+                    fallback: `https://eth-mainnet.alchemyapi.io/v2/${env.alchemyId}`,
                 });
             case ChainId.RINKEBY:
                 return this._get({
                     key: `REACT_APP_RINKEBY_NODE_URL`,
-                    fallback: `https://eth-rinkeby.alchemyapi.io/v2/${process.env.NEXT_PUBLIC_ALCHEMY_ID}`,
+                    fallback: `https://eth-rinkeby.alchemyapi.io/v2/${env.alchemyId}`,
                 });
         }
     };
