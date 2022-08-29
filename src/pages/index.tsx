@@ -1,24 +1,7 @@
 import Example from "components/Example/index";
-import { EXAMPLE_ADDRESSES } from "config/constants/addresses";
-import { ChainId } from "config/constants/chainId";
-import { useDynamicExampleContract, useStaticExampleContract } from "hooks/useContract";
 import type { NextPage } from "next";
 import Head from "next/head";
-import { useEffect, useState } from "react";
-import { useAccount } from "wagmi";
 const Home: NextPage = () => {
-    const StaticExampleInstance = useStaticExampleContract(EXAMPLE_ADDRESSES[ChainId.RINKEBY], ChainId.RINKEBY);
-    const DynamicExampleInstance = useDynamicExampleContract(EXAMPLE_ADDRESSES, true);
-    const [count, setCount] = useState("");
-    const { isConnected } = useAccount();
-
-    useEffect(() => {
-        init();
-    }, []);
-    const init = async () => {
-        const count = await StaticExampleInstance.getCount();
-        setCount(count.toString());
-    };
     return (
         <div>
             <Head>
