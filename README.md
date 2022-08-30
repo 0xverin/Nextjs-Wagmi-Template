@@ -7,3 +7,13 @@
 # 使用案例
 切换到example分支
 案例网址：https://nextjs-wagmi-template.vercel.app/
+
+# Script Command
+Look directly at the package JSON recommends using yarn to operate
+
+# Directory Guide
+Mainly_ App.tsx and usecontract.ts. Other files are configured around these two files
+
+# Example
+Switch to the example branch
+Example：https://nextjs-wagmi-template.vercel.app/
