@@ -4,6 +4,8 @@
 # 目录导读
 主要看_app.tsx和useContract.ts两个文件，其他文件都是围绕这两个文件来配置
 
+![Image text](https://github.com/Verin1005/Nextjs-Wagmi-Template/blob/img/src/assets/rainbowkit.png)
+
 # 使用案例
 切换到example分支
 案例网址：https://nextjs-wagmi-template.vercel.app/
