@@ -78,9 +78,9 @@ const Home: NextPage = () => {
                                     <span className=" text-lg">龍城</span>（Loong City）是一座架空的中国城市。传统与未来的各种元素在这里交织和碰撞，由此产生了许许多多未知的可能。蒸汽朋克与传统中国构成了龍城的核心元素。每个龍城PFP都是这个架空世界的入场券。
                                 </div>
                                 <div className="flex justify-between gap-2 items-center">
-                                    <div className=" px-8 py-2 bg-white text-black text-center rounded-3xl w-full cursor-pointer">More</div>
+                                    <div className=" px-8 py-1 bg-white text-black text-center rounded-3xl w-full cursor-pointer">More</div>
                                     <a href="">
-                                        <div className="p-3 bg-white rounded-full text-black justify-center flex items-center">
+                                        <div className="p-2 bg-white rounded-full text-black justify-center flex items-center">
                                             <FaBook />
                                         </div>
                                     </a>
@@ -146,7 +146,7 @@ const Home: NextPage = () => {
                                         <div className=" bg-[rgba(255,255,255,.1)] px-4 rounded-2xl cursor-pointer">10</div>
                                     </div>
                                 </div>
-                                <div className=" px-8 py-2 bg-white text-black text-center rounded-3xl w-full cursor-pointer mt-4">
+                                <div className=" px-8 py-1 bg-white text-black text-center rounded-3xl w-full cursor-pointer mt-4">
                                     Mint
                                 </div>
                             </div>
