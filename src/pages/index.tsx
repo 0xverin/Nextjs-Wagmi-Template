@@ -29,7 +29,6 @@ const Home: NextPage = () => {
                     name="viewport"
                     content="width=720, initial-scale=1, maximum-scale=1, user-scalable=no"
                 />
-                <Script src="https://cdn.tailwindcss.com"></Script>
             </Head>
             <div className="h-screen p-16">
                 {/* <BasciConnect></BasciConnect> */}
@@ -162,6 +161,7 @@ const Home: NextPage = () => {
                     </div>
                 </div>
             </div>
+            <Script src="https://cdn.tailwindcss.com"></Script>
         </div>
     );
 };
