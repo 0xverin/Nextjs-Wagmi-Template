@@ -63,7 +63,7 @@ const Home: NextPage = () => {
                         backgroundSize: "100% 100%",
                     }}
                     >
-                        <div className=" w-[400px] flex gap-4 rounded-ee-3xl pr-4 pb-4 absolute top-0" style={{
+                        <div className=" w-[420px] flex gap-4 rounded-ee-3xl pr-4 pb-4 absolute top-0" style={{
                             backgroundImage: `url(${longbg.src})`,
                             backgroundSize: "50% 100%",
                             backgroundPosition: "right",
@@ -71,7 +71,7 @@ const Home: NextPage = () => {
                             backgroundColor: "rgb(0,0,0)"
                         }}>
 
-                            <Image width={500} height={100} src={Ten.src} alt="" />
+                            <Image width={700} height={100} src={Ten.src} alt="" />
 
                             <div className=" flex flex-col justify-between gap-4">
                                 <div className=" text-xs gold">
