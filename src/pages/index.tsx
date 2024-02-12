@@ -15,6 +15,7 @@ import Logo from "../Logo.svg"
 import longbg from "../images/long-bg.png"
 import longbg2 from "../images/longbg2.png"
 import bgmax from "../images/bgmax.png"
+import Script from 'next/script'
 
 import Head from "next/head";
 const Home: NextPage = () => {
@@ -28,7 +29,7 @@ const Home: NextPage = () => {
                     name="viewport"
                     content="width=720, initial-scale=1, maximum-scale=1, user-scalable=no"
                 />
-                <script src="https://cdn.tailwindcss.com"></script>
+                <Script src="https://cdn.tailwindcss.com"></Script>
             </Head>
             <div className="h-screen p-16">
                 {/* <BasciConnect></BasciConnect> */}
