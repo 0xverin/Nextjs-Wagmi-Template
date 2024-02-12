@@ -1,5 +1,17 @@
+@font-face{
+	font-family:led;
+	src:url( './Cinzel-VariableFont_wght.ttf' ) 
+}
+
 html,
 body {
     padding: 0;
     margin: 0;
+    background-color: black;
+    color: white;
+font-family: led;
+}
+
+.gold {
+    color: #DFD1B3;
 }
