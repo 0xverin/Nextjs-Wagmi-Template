@@ -161,7 +161,7 @@ const Home: NextPage = () => {
                     </div>
                 </div>
             </div>
-            <Script src="https://cdn.tailwindcss.com"></Script>
+            {/* <Script src="https://cdn.tailwindcss.com" async></Script> */}
         </div>
     );
 };
