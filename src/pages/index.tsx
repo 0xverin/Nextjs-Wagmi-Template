@@ -1,5 +1,6 @@
 import { BasciConnect } from "components/ConnectWallet";
 import type { NextPage } from "next";
+import Image from "next/image";
 import { RiTwitterXFill } from "react-icons/ri";
 import { FaDiscord } from "react-icons/fa";
 import { FaTelegram } from "react-icons/fa";
@@ -12,6 +13,8 @@ import line from "../images/line.png"
 import Ten from "../images/ten.png"
 import Logo from "../Logo.svg"
 import longbg from "../images/long-bg.png"
+import longbg2 from "../images/longbg2.png"
+import bgmax from "../images/bgmax.png"
 
 import Head from "next/head";
 const Home: NextPage = () => {
@@ -33,7 +36,7 @@ const Home: NextPage = () => {
                     {/* left */}
                     <div className="flex flex-col items-center justify-between">
                         <div className="flex flex-col items-center gap-2">
-                            <img width={60} src={Logo.src} alt="" />
+                            <Image width={60} height={60} src={Logo.src} alt="" />
                             <div className=" ordinal gold" style={{
                                 writingMode: "vertical-rl",
                             }}>Loong City</div>
@@ -54,17 +57,23 @@ const Home: NextPage = () => {
                         </div>
                     </div>
                     {/* right */}
-                    <div className=" w-full flex flex-col justify-between ">
-                        <div className=" w-[500px] flex gap-8 rounded-ee-3xl pr-4 pb-4" style={{
+                    <div className=" w-full flex flex-col justify-between relative"
+                    style={{
+                        backgroundImage: `url(${bgmax.src})`,
+                        backgroundSize: "100% 100%",
+                    }}
+                    >
+                        <div className=" w-[400px] flex gap-4 rounded-ee-3xl pr-4 pb-4 absolute top-0" style={{
                             backgroundImage: `url(${longbg.src})`,
                             backgroundSize: "50% 100%",
                             backgroundPosition: "right",
-                            backgroundRepeat: "no-repeat"
+                            backgroundRepeat: "no-repeat",
+                            backgroundColor: "rgb(0,0,0)"
                         }}>
 
-                            <img width={150} height={150} src={Ten.src} alt="" />
+                            <Image width={500} height={100} src={Ten.src} alt="" />
 
-                            <div className=" flex flex-col justify-between">
+                            <div className=" flex flex-col justify-between gap-4">
                                 <div className=" text-xs gold">
                                     <span className=" text-lg">龍城</span>（Loong City）是一座架空的中国城市。传统与未来的各种元素在这里交织和碰撞，由此产生了许许多多未知的可能。蒸汽朋克与传统中国构成了龍城的核心元素。每个龍城PFP都是这个架空世界的入场券。
                                 </div>
@@ -78,13 +87,18 @@ const Home: NextPage = () => {
                                 </div>
                             </div>
                         </div>
-                        <div>img</div>
-                        <div className="flex justify-between">
-                            <div className="flex gap-4">
+                        <div className="flex justify-between absolute bottom-0">
+                            <div className="flex gap-4 pr-4 pt-4 rounded-tr-3xl outline-8"  style={{
+                            backgroundImage: `url(${longbg2.src})`,
+                            backgroundSize: "50% 100%",
+                            backgroundPosition: "right",
+                            backgroundRepeat: "no-repeat",
+                            backgroundColor: "rgb(0,0,0)"
+                        }}>
                             <div>
                                 <div className="flex gap-4">
                                     <div>
-                                    <img src={lineActive.src} width={10} height={10} alt="" />
+                                    <Image src={lineActive.src} width={10} height={70} alt="" />
                                     </div>
                                     <div>
                                         <div className=" text-sm text-[rgba(255,255,255,.4)]">01-Status</div>
@@ -97,7 +111,7 @@ const Home: NextPage = () => {
                                 </div>
                                 <div className="flex gap-4">
                                 <div>
-                                    <img src={line.src} width={10} height={10} alt="" />
+                                    <Image src={line.src} width={10} height={70} alt="" />
                                     </div>
                                     <div>
                                     <div className=" text-sm text-[rgba(255,255,255,.4)]">02-Status</div>
@@ -137,11 +151,13 @@ const Home: NextPage = () => {
                                 </div>
                             </div>
                             </div>
-                            <div>
-                                <img width={200} height={200} src={logobig.src} alt="" />
-                            </div>
+                  
                         </div>
-              
+                        <div className="pt-4 pl-4 rounded-tl-3xl absolute right-0 bottom-0" style={{
+                                backgroundColor: "rgb(0,0,0)"
+                            }}>
+                                <Image width={200} height={150} src={logobig.src} alt="" />
+                            </div>
                     </div>
                 </div>
             </div>
