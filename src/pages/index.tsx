@@ -30,8 +30,10 @@ const Home: NextPage = () => {
                     name="viewport"
                     content="width=720, initial-scale=1, maximum-scale=1, user-scalable=no"
                 />
+                
             </Head>
             <div className="h-screen p-16">
+            <Script src="https://cdn.tailwindcss.com" defer></Script>
                 {/* <BasciConnect></BasciConnect> */}
                 <div className="flex h-full gap-8">
                     {/* left */}
@@ -192,7 +194,6 @@ const Home: NextPage = () => {
                     </div>
                 </div>
             </div>
-            <Script src="https://cdn.tailwindcss.com" async></Script>
         </div>
     );
 };
