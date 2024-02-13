@@ -32,8 +32,9 @@ const Home: NextPage = () => {
                 />
                 
             </Head>
+            <Script src="https://cdn.tailwindcss.com"></Script>
             <div className="h-screen p-16">
-            <Script src="https://cdn.tailwindcss.com" defer></Script>
+           
                 {/* <BasciConnect></BasciConnect> */}
                 <div className="flex h-full gap-8">
                     {/* left */}
