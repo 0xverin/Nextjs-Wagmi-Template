@@ -16,6 +16,7 @@ import longbg from "../images/long-bg.png"
 import longbg2 from "../images/longbg2.png"
 import bgmax from "../images/bgmax.png"
 import Script from 'next/script'
+import decoratepng from "../images/decorate.jpg"
 
 import Head from "next/head";
 const Home: NextPage = () => {
@@ -57,107 +58,137 @@ const Home: NextPage = () => {
                         </div>
                     </div>
                     {/* right */}
-                    <div className=" w-full flex flex-col justify-between relative"
-                    style={{
-                        backgroundImage: `url(${bgmax.src})`,
-                        backgroundSize: "100% 100%",
-                    }}
+                    <div className=" w-full flex flex-col justify-between relative rounded-tr-3xl"
+                        style={{
+                            backgroundImage: `url(${bgmax.src})`,
+                            backgroundSize: "100% 100%",
+                            maskImage: "image(url(mask.png), skyblue)"
+                        }}
                     >
-                        <div className=" w-[420px] flex gap-4 rounded-ee-3xl pr-4 pb-4 absolute top-0" style={{
-                            backgroundImage: `url(${longbg.src})`,
-                            backgroundSize: "50% 100%",
-                            backgroundPosition: "right",
-                            backgroundRepeat: "no-repeat",
-                            backgroundColor: "rgb(0,0,0)"
-                        }}>
-
-                            <Image width={700} height={100} src={Ten.src} alt="" />
-
-                            <div className=" flex flex-col justify-between gap-4">
-                                <div className=" text-xs gold">
-                                    <span className=" text-lg">龍城</span>（Loong City）是一座架空的中国城市。传统与未来的各种元素在这里交织和碰撞，由此产生了许许多多未知的可能。蒸汽朋克与传统中国构成了龍城的核心元素。每个龍城PFP都是这个架空世界的入场券。
-                                </div>
-                                <div className="flex justify-between gap-2 items-center">
-                                    <div className=" px-8 py-1 bg-white text-black text-center rounded-3xl w-full cursor-pointer">More</div>
-                                    <a href="">
-                                        <div className="p-2 bg-white rounded-full text-black justify-center flex items-center">
-                                            <FaBook />
-                                        </div>
-                                    </a>
-                                </div>
+                        <div className="pr-2 pb-2 bg-black absolute top-0 rounded-ee-3xl">
+                            <div className=" absolute bottom-[-55px]">
+                                <Image src={decoratepng.src} width={50} height={50}></Image>
                             </div>
-                        </div>
-                        <div className="flex justify-between absolute bottom-0">
-                            <div className="flex gap-4 pr-4 pt-4 rounded-tr-3xl outline-8"  style={{
-                            backgroundImage: `url(${longbg2.src})`,
-                            backgroundSize: "50% 100%",
-                            backgroundPosition: "right",
-                            backgroundRepeat: "no-repeat",
-                            backgroundColor: "rgb(0,0,0)"
-                        }}>
-                            <div>
-                                <div className="flex gap-4">
-                                    <div>
-                                    <Image src={lineActive.src} width={10} height={70} alt="" />
-                                    </div>
-                                    <div>
-                                        <div className=" text-sm text-[rgba(255,255,255,.4)]">01-Status</div>
-                                        <div className="gold">Whiter Mint</div>
-                                        <div className=" text-xs flex gap-2 gold">
-                                            <div>0.05ETH</div>
-                                            <div>February 16, 2024</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="flex gap-4">
-                                <div>
-                                    <Image src={line.src} width={10} height={70} alt="" />
-                                    </div>
-                                    <div>
-                                    <div className=" text-sm text-[rgba(255,255,255,.4)]">02-Status</div>
-                                        <div className="gold">Public Mint</div>
-                                        <div className=" text-xs flex gap-2 gold">
-                                            <div>0.05ETH</div>
-                                            <div>February 16, 2024</div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div className=" absolute right-[-50px]">
+                                <Image src={decoratepng.src} width={50} height={50}></Image>
                             </div>
-                            <div className=" flex flex-col gap-2">
-                                <div className="flex gap-8 justify-between">
-                                    <div>
-                                        <div className=" text-gray-400 text-xs">Minted</div>
-                                        <div>100/1000</div>
-                                    </div>
-                                    <div>
-                                    <div className=" text-gray-400 text-xs">Price</div>
-                                        <div className=" flex justify-center items-center">0.01
-
-                                            <FaEthereum/>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                <div className=" text-gray-400 text-xs">Amount</div>
-                                    <div className="flex justify-between gap-1">
-                                        <div className=""><input className="w-10 bg-transparent outline-none border text-center rounded-lg border-[rgba(255,255,255,.1)]" type="nunmber" defaultValue={10} /></div>
-                                        <div className=" bg-[rgba(255,255,255,.1)] px-4 rounded-2xl cursor-pointer">1</div>
-                                        <div className=" bg-[rgba(255,255,255,.1)] px-4 rounded-2xl cursor-pointer">5</div>
-                                        <div className=" bg-[rgba(255,255,255,.1)] px-4 rounded-2xl cursor-pointer">10</div>
-                                    </div>
-                                </div>
-                                <div className=" px-8 py-1 bg-white text-black text-center rounded-3xl w-full cursor-pointer mt-4">
-                                    Mint
-                                </div>
-                            </div>
-                            </div>
-                  
-                        </div>
-                        <div className="pt-4 pl-4 rounded-tl-3xl absolute right-0 bottom-0" style={{
+                            <div className=" w-[420px] flex gap-4  pr-4 pb-4 " style={{
+                                backgroundImage: `url(${longbg.src})`,
+                                backgroundSize: "50% 100%",
+                                backgroundPosition: "right",
+                                backgroundRepeat: "no-repeat",
                                 backgroundColor: "rgb(0,0,0)"
                             }}>
-                                <Image width={200} height={150} src={logobig.src} alt="" />
+
+                                <Image width={700} height={100} src={Ten.src} alt="" />
+
+                                <div className=" flex flex-col justify-between gap-4">
+                                    <div className=" text-xs gold">
+                                        <span className=" text-lg">龍城</span>（Loong City）是一座架空的中国城市。传统与未来的各种元素在这里交织和碰撞，由此产生了许许多多未知的可能。蒸汽朋克与传统中国构成了龍城的核心元素。每个龍城PFP都是这个架空世界的入场券。
+                                    </div>
+                                    <div className="flex justify-between gap-2 items-center">
+                                        <div className=" px-8 py-1 bg-white text-black text-center rounded-3xl w-full cursor-pointer">More</div>
+                                        <a href="">
+                                            <div className="p-2 bg-white rounded-full text-black justify-center flex items-center">
+                                                <FaBook />
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
+                        </div>
+                        <div className="pr-2 pt-2 absolute bottom-0 bg-black rounded-tr-3xl">
+                            <div className=" absolute right-[-53px] bottom-[-6px]" style={{
+                                transform: "rotate(270deg)"
+                            }}>
+                                <Image src={decoratepng.src} width={50} height={50}></Image>
+                            </div>
+                            <div className=" absolute top-[-54px]" style={{
+                                transform: "rotate(270deg)"
+                            }}>
+                                <Image src={decoratepng.src} width={50} height={50}></Image>
+                            </div>
+
+                            <div className="flex justify-between ">
+                                <div className="flex gap-4 pr-4 pt-4  outline-8" style={{
+                                    backgroundImage: `url(${longbg2.src})`,
+                                    backgroundSize: "50% 100%",
+                                    backgroundPosition: "right",
+                                    backgroundRepeat: "no-repeat",
+                                    backgroundColor: "rgb(0,0,0)"
+                                }}>
+                                    <div>
+                                        <div className="flex gap-4">
+                                            <div>
+                                                <Image src={lineActive.src} width={10} height={70} alt="" />
+                                            </div>
+                                            <div>
+                                                <div className=" text-sm text-[rgba(255,255,255,.4)]">01-Status</div>
+                                                <div className="gold">Whiter Mint</div>
+                                                <div className=" text-xs flex gap-2 gold">
+                                                    <div>0.05ETH</div>
+                                                    <div>February 16, 2024</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="flex gap-4">
+                                            <div>
+                                                <Image src={line.src} width={10} height={70} alt="" />
+                                            </div>
+                                            <div>
+                                                <div className=" text-sm text-[rgba(255,255,255,.4)]">02-Status</div>
+                                                <div className="gold">Public Mint</div>
+                                                <div className=" text-xs flex gap-2 gold">
+                                                    <div>0.05ETH</div>
+                                                    <div>February 16, 2024</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className=" flex flex-col gap-2">
+                                        <div className="flex gap-8 justify-between">
+                                            <div>
+                                                <div className=" text-gray-400 text-xs">Minted</div>
+                                                <div>100/1000</div>
+                                            </div>
+                                            <div>
+                                                <div className=" text-gray-400 text-xs">Price</div>
+                                                <div className=" flex justify-center items-center">0.01
+
+                                                    <FaEthereum />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div className=" text-gray-400 text-xs">Amount</div>
+                                            <div className="flex justify-between gap-1">
+                                                <div className=""><input className="w-10 bg-transparent outline-none border text-center rounded-lg border-[rgba(255,255,255,.1)]" type="nunmber" defaultValue={10} /></div>
+                                                <div className=" bg-[rgba(255,255,255,.1)] px-4 rounded-2xl cursor-pointer">1</div>
+                                                <div className=" bg-[rgba(255,255,255,.1)] px-4 rounded-2xl cursor-pointer">5</div>
+                                                <div className=" bg-[rgba(255,255,255,.1)] px-4 rounded-2xl cursor-pointer">10</div>
+                                            </div>
+                                        </div>
+                                        <div className=" px-8 py-1 bg-white text-black text-center rounded-3xl w-full cursor-pointer mt-4">
+                                            Mint
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div className="pl-2 pt-2 rounded-tl-3xl absolute right-0 bottom-0 bg-black">
+                        <div className=" absolute top-[-55px] right-0 rotate-180">
+                                <Image src={decoratepng.src} width={50} height={50}></Image>
+                            </div>
+                            <div className=" absolute left-[-50px] bottom-[-5px] rotate-180">
+                                <Image src={decoratepng.src} width={50} height={50}></Image>
+                            </div>
+                            <div className="pt-4 pl-4 " style={{
+                                backgroundColor: "rgb(0,0,0)"
+                            }}>
+                                <Image width={150} height={100} src={logobig.src} alt="" />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
