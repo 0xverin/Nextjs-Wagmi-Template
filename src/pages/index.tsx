@@ -223,10 +223,10 @@ const Home: NextPage = () => {
                                             <div>
                                                 <Image src={line.src} width={10} height={70} alt="" />
                                             </div>
-                                            <div>
+                                            <div className="text-[rgba(255,255,255,.4)]">
                                                 <div className=" text-sm text-[rgba(255,255,255,.4)] pb-2 anony">02-Status</div>
-                                                <div className="gold">Public Mint</div>
-                                                <div className=" text-xs flex gap-2 gold">
+                                                <div className="">Public Mint</div>
+                                                <div className=" text-xs flex gap-2 ">
                                                     <div>0.025 ETH</div>
                                                     <div>February 16, 2024</div>
                                                 </div>
