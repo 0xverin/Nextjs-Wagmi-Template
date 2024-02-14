@@ -238,7 +238,7 @@ const Home: NextPage = () => {
                                             <div className="flex gap-4 justify-between">
                                                 <div>
                                                     <div className=" text-gray-400 text-xs anony">Minted</div>
-                                                    <div>100/1000</div>
+                                                    <div>0/1000</div>
                                                 </div>
                                                 <div>
                                                     <div className=" text-gray-400 text-xs anony">Price</div>
