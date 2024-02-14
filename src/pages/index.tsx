@@ -235,7 +235,7 @@ const Home: NextPage = () => {
                                 borderTopLeftRadius: "2rem",
                                 overflow: "hidden"
                             }}>
-                                <Image width={150} height={100} src={logobig.src} alt="" />
+                                <Image width={250} height={180} src={logobig.src} alt="" />
                             </div>
                         </div>
                     </div>
