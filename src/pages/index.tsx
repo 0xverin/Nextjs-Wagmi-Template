@@ -17,9 +17,26 @@ import longbg2 from "../images/longbg2.png"
 import bgmax from "../images/bgmax.png"
 import Script from 'next/script'
 import decoratepng from "../images/decorate.jpg"
+import { BsPersonCircle } from "react-icons/bs";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
+
+import loongvideo from "../images/loongcity-webvideo.mp4"
+
+import {
+    useConnectModal,
+    useAccountModal,
+    useChainModal,
+} from '@rainbow-me/rainbowkit';
 
 import Head from "next/head";
+import { useAccount } from 'wagmi'
+import { useState } from "react";
+
 const Home: NextPage = () => {
+    const {address,isConnected,isDisconnected,isConnecting} = useAccount();
+    const { openConnectModal } = useConnectModal();
+    const [openUserDetails,setOpenUserDetails] = useState(false)
+
     return (
         <div>
             <Head>
@@ -30,13 +47,18 @@ const Home: NextPage = () => {
                     name="viewport"
                     content="width=720, initial-scale=1, maximum-scale=1, user-scalable=no"
                 />
-                
+
             </Head>
             <Script src="https://cdn.tailwindcss.com"></Script>
             <div className="h-screen p-16" style={{
-                minWidth:"1200px"
+                minWidth: "1200px"
             }}>
-           
+
+<video className="video-bg" autoPlay loop>
+    <source src={require("../images/loongcity-webvideo.mp4").src} type="video/mp4"/>
+    {/* {loongvideo.src} */}
+</video>
+
                 {/* <BasciConnect></BasciConnect> */}
                 <div className="flex h-full gap-8">
                     {/* left */}
@@ -59,7 +81,17 @@ const Home: NextPage = () => {
                                 <div className=" hover:opacity-60">
                                     <a href=""><FaTelegram /></a>
                                 </div></div>
-                            <div className="p-4 bg-[rgba(255,255,255,.1)] rounded-full"><FaWallet /></div>
+                            <div className="rounded-full hover:text-[#e8b23e] cursor-pointer relative flex items-center">
+                                <BasciConnect></BasciConnect>
+                               {/* { isDisconnected && <FaWallet className="m-4"  onClick={() => openConnectModal()}/>}
+                               { isConnecting && <AiOutlineLoading3Quarters className="animate-spin p-4"/>}
+                               { isConnected && !openUserDetails && <BsPersonCircle className="m-4" onMouseMove={()=>setOpenUserDetails(true)}/>}
+                               { openUserDetails && <div className="p-4 rounded-sm absolute text-sm z-50 bg-red-500 h-[32px] flex justify-center gap-2 items-center" onMouseLeave={()=>setOpenUserDetails(false)}>
+                                {`${address.slice(0,5)}...${address.slice(address.length-5,address.length)}`} 
+                                <div><BsPersonCircle></BsPersonCircle></div>
+                               </div> } */}
+
+                            </div>
                         </div>
                     </div>
                     {/* right */}
@@ -182,7 +214,7 @@ const Home: NextPage = () => {
                             </div>
                         </div>
                         <div className="pl-2 pt-2 rounded-tl-3xl absolute right-0 bottom-0 bg-black">
-                        <div className=" absolute top-[-55px] right-0 rotate-180">
+                            <div className=" absolute top-[-55px] right-0 rotate-180">
                                 <Image src={decoratepng.src} width={50} height={50}></Image>
                             </div>
                             <div className=" absolute left-[-50px] bottom-[-5px] rotate-180">

@@ -1,6 +1,8 @@
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import Image from "next/image";
 
+import { FaWallet } from "react-icons/fa";
+
 export const CustomConnect = () => {
     return (
         <ConnectButton.Custom>
@@ -32,8 +34,8 @@ export const CustomConnect = () => {
                         {(() => {
                             if (!connected) {
                                 return (
-                                    <button onClick={openConnectModal} type="button">
-                                        Connect Wallet
+                                    <button className="p-4 bg-[rgba(255,255,255,.1)] rounded-3xl" onClick={openConnectModal} type="button">
+                                        <FaWallet />
                                     </button>
                                 );
                             }
@@ -45,35 +47,7 @@ export const CustomConnect = () => {
                                 );
                             }
                             return (
-                                <div style={{ display: "flex", gap: 12 }}>
-                                    <button
-                                        onClick={openChainModal}
-                                        style={{ display: "flex", alignItems: "center" }}
-                                        type="button"
-                                    >
-                                        {chain.hasIcon && (
-                                            <div
-                                                style={{
-                                                    background: chain.iconBackground,
-                                                    width: 12,
-                                                    height: 12,
-                                                    borderRadius: 999,
-                                                    overflow: "hidden",
-                                                    marginRight: 4,
-                                                }}
-                                            >
-                                                {chain.iconUrl && (
-                                                    <Image
-                                                        alt={chain.name ?? "Chain icon"}
-                                                        src={chain.iconUrl}
-                                                        width={12}
-                                                        height={12}
-                                                    />
-                                                )}
-                                            </div>
-                                        )}
-                                        {chain.name}
-                                    </button>
+                                <div className="text-sm">
                                     <button onClick={openAccountModal} type="button">
                                         {account.displayName}
                                         {account.displayBalance ? ` (${account.displayBalance})` : ""}
@@ -89,5 +63,6 @@ export const CustomConnect = () => {
 };
 
 export const BasciConnect = () => {
-    return <ConnectButton></ConnectButton>;
+    // return <ConnectButton label="label" chainStatus="none" accountStatus="address"></ConnectButton>;
+    return <CustomConnect></CustomConnect>
 };
