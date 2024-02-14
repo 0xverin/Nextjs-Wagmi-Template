@@ -141,7 +141,7 @@ const Home: NextPage = () => {
                             // maskImage: "image(url(mask.png), skyblue)"
                         }}
                     >
-                        <video className="absolute top-0 right-0 left-0 bottom-0 -z-1 h-full w-screen objectfit opacity-50" autoPlay loop muted src="https://vpn.4everland.store/loongcity-webvideo2.mp4" style={{
+                        <video className="absolute top-[-10px] right-[-10px] left-[-10px] bottom-[-10px] -z-1 h-full w-screen objectfit opacity-50" autoPlay loop muted src="https://vpn.4everland.store/loongcity-webvideo2.mp4" style={{
                             borderTopRightRadius: "2rem",
                         }}>
                         </video>
@@ -151,7 +151,7 @@ const Home: NextPage = () => {
                             <div className=" absolute bottom-[-57px] left-[-1px]">
                                 <Image src={decoratepng.src} width={50} height={50}></Image>
                             </div>
-                            <div className=" absolute right-[-50px] top-[3px]">
+                            <div className=" absolute right-[-50px] top-[0px]">
                                 <Image src={decoratepng.src} width={50} height={50}></Image>
                             </div>
                             <div className=" w-[420px] flex gap-4  pr-4 pb-4 " style={{
@@ -184,7 +184,7 @@ const Home: NextPage = () => {
                         <div className="pr-2 pt-2 absolute bottom-0 bg-black" style={{
                             borderTopRightRadius: "2rem",
                         }}>
-                            <div className=" absolute right-[-53px] bottom-[-1px]" style={{
+                            <div className=" absolute right-[-53px] bottom-[10px]" style={{
                                 transform: "rotate(270deg)",
                             }}>
                                 <Image src={decoratepng.src} width={50} height={50}></Image>
@@ -259,7 +259,7 @@ const Home: NextPage = () => {
                                             </div>
                                         </div>
                                         <div className=" px-8 py-1 bg-white text-black text-center rounded-3xl w-full cursor-pointer mt-4 font-bold hover:text-[#e8b23e]">
-                                            Mint
+                                            Coming Soon
                                         </div>
                                     </div>
                                 </div>
@@ -269,10 +269,10 @@ const Home: NextPage = () => {
                         <div className="pl-2 pt-2 rounded-tl-3xl absolute right-0 bottom-0 bg-black" style={{
                             borderTopLeftRadius: "2rem",
                         }}>
-                            <div className=" absolute top-[-57px] right-0 rotate-180">
+                            <div className=" absolute top-[-56px] right-[10px] rotate-180">
                                 <Image src={decoratepng.src} width={50} height={50}></Image>
                             </div>
-                            <div className=" absolute left-[-50px] bottom-[3px] rotate-180">
+                            <div className=" absolute left-[-50px] bottom-[13px] rotate-180">
                                 <Image src={decoratepng.src} width={50} height={50}></Image>
                             </div>
                             <div className="pt-4 pl-4 " style={{
@@ -280,7 +280,7 @@ const Home: NextPage = () => {
                                 borderTopLeftRadius: "2rem",
                                 overflow: "hidden"
                             }}>
-                                <Image width={250} height={180} src={logobig.src} alt="" />
+                                <Image width={200} height={140} src={logobig.src} alt="" />
                             </div>
                         </div>
                     </div>

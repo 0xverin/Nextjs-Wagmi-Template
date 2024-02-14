@@ -53,9 +53,13 @@ font-family: led;
 
 .ant-modal-content{
     width: 600px;
+    height: 80vh;
+    overflow: scroll;
     padding: 30px 40px !important;
 }
 
 .ant-modal{
     margin-bottom: 200px;
+    padding-bottom: 20px;
 }
+
