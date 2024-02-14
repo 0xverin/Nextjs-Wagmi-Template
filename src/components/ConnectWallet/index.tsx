@@ -48,7 +48,7 @@ export const CustomConnect = () => {
                             }
                             return (
                                 <div className="text-sm">
-                                    <button onClick={openAccountModal} type="button">
+                                    <button className="border border-[rgba(255,255,255,.15)] p-1 rounded-full" onClick={openAccountModal} type="button">
                                         {account.displayName}
                                         {account.displayBalance ? ` (${account.displayBalance})` : ""}
                                     </button>

@@ -102,10 +102,10 @@ const Home: NextPage = () => {
                         <div className="pr-2 pb-2 bg-black absolute top-0" style={{
                             borderEndEndRadius: "3rem"
                         }}>
-                            <div className=" absolute bottom-[-55px]">
+                            <div className=" absolute bottom-[-57px] left-[-1px]">
                                 <Image src={decoratepng.src} width={50} height={50}></Image>
                             </div>
-                            <div className=" absolute right-[-50px]">
+                            <div className=" absolute right-[-50px] top-[3px]">
                                 <Image src={decoratepng.src} width={50} height={50}></Image>
                             </div>
                             <div className=" w-[420px] flex gap-4  pr-4 pb-4 " style={{
@@ -138,12 +138,12 @@ const Home: NextPage = () => {
                         <div className="pr-2 pt-2 absolute bottom-0 bg-black" style={{
                             borderTopRightRadius: "3rem",
                         }}>
-                            <div className=" absolute right-[-53px] bottom-[-6px]" style={{
+                            <div className=" absolute right-[-53px] bottom-[-1px]" style={{
                                 transform: "rotate(270deg)",
                             }}>
                                 <Image src={decoratepng.src} width={50} height={50}></Image>
                             </div>
-                            <div className=" absolute top-[-53px]" style={{
+                            <div className=" absolute top-[-53px] left-[3px]" style={{
                                 transform: "rotate(270deg)"
                             }}>
                                 <Image src={decoratepng.src} width={50} height={50}></Image>
@@ -221,10 +221,10 @@ const Home: NextPage = () => {
                         <div className="pl-2 pt-2 rounded-tl-3xl absolute right-0 bottom-0 bg-black" style={{
                             borderTopLeftRadius: "3rem",
                         }}>
-                            <div className=" absolute top-[-55px] right-0 rotate-180">
+                            <div className=" absolute top-[-57px] right-0 rotate-180">
                                 <Image src={decoratepng.src} width={50} height={50}></Image>
                             </div>
-                            <div className=" absolute left-[-50px] bottom-[-5px] rotate-180">
+                            <div className=" absolute left-[-50px] bottom-[3px] rotate-180">
                                 <Image src={decoratepng.src} width={50} height={50}></Image>
                             </div>
                             <div className="pt-4 pl-4 " style={{
