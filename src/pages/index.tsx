@@ -49,7 +49,8 @@ const Home: NextPage = () => {
             </Head>
             <Script src="https://cdn.tailwindcss.com"></Script>
             <div className="h-screen p-16" style={{
-                minWidth: "1200px"
+                minWidth: "1200px",
+                minHeight:"730px"
             }}>
                 <div className="flex h-full gap-8">
                     {/* left */}
@@ -152,20 +153,20 @@ const Home: NextPage = () => {
                                  borderTopRightRadius: "2rem",
                                  overflow: "hidden"
                             }}>
-                                <div className="flex gap-4 pr-4 pt-4  outline-8" style={{
+                                <div className="flex gap-8 pr-4 pt-4  outline-8" style={{
                                     backgroundImage: `url(${longbg2.src})`,
                                     backgroundSize: "50% 100%",
                                     backgroundPosition: "right",
                                     backgroundRepeat: "no-repeat",
                                     backgroundColor: "rgb(0,0,0)"
                                 }}>
-                                    <div>
+                                    <div className=" flex flex-col gap-2">
                                         <div className="flex gap-4">
                                             <div>
                                                 <Image src={lineActive.src} width={10} height={70} alt="" />
                                             </div>
                                             <div>
-                                                <div className=" text-sm text-[rgba(255,255,255,.4)]">01-Status</div>
+                                                <div className=" text-sm text-[rgba(255,255,255,.4)] pb-2">01-Status</div>
                                                 <div className="gold">White List Mint</div>
                                                 <div className=" text-xs flex gap-2 gold">
                                                     <div>FREE MINT</div>
@@ -178,7 +179,7 @@ const Home: NextPage = () => {
                                                 <Image src={line.src} width={10} height={70} alt="" />
                                             </div>
                                             <div>
-                                                <div className=" text-sm text-[rgba(255,255,255,.4)]">02-Status</div>
+                                                <div className=" text-sm text-[rgba(255,255,255,.4)] pb-2">02-Status</div>
                                                 <div className="gold">Public Mint</div>
                                                 <div className=" text-xs flex gap-2 gold">
                                                     <div>0.025 ETH</div>
@@ -187,15 +188,16 @@ const Home: NextPage = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className=" flex flex-col gap-2">
-                                        <div className="flex gap-8 justify-between">
+                                    <div className=" flex flex-col justify-between">
+                                        <div className="flex flex-col gap-4">
+                                        <div className="flex gap-4 justify-between">
                                             <div>
                                                 <div className=" text-gray-400 text-xs">Minted</div>
                                                 <div>100/1000</div>
                                             </div>
                                             <div>
                                                 <div className=" text-gray-400 text-xs">Price</div>
-                                                <div className=" flex justify-center items-center">0.01
+                                                <div className=" flex justify-center items-center">0.0025
 
                                                     <FaEthereum />
                                                 </div>
@@ -204,11 +206,12 @@ const Home: NextPage = () => {
                                         <div>
                                             <div className=" text-gray-400 text-xs">Amount</div>
                                             <div className="flex justify-between gap-1">
-                                                <div className=""><input className="w-10 bg-transparent outline-none border text-center rounded-lg border-[rgba(255,255,255,.1)] text-[#DFD1B3]" type="nunmber" defaultValue={10} /></div>
-                                                <div className=" bg-[rgba(255,255,255,.1)] px-4 rounded-2xl cursor-pointer hover:text-black hover:bg-[#DFD1B3]">1</div>
-                                                <div className=" bg-[rgba(255,255,255,.1)] px-4 rounded-2xl cursor-pointer hover:text-black hover:bg-[#DFD1B3]">5</div>
-                                                <div className=" bg-[rgba(255,255,255,.1)] px-4 rounded-2xl cursor-pointer hover:text-black hover:bg-[#DFD1B3]">10</div>
+                                                <div className=""><input className="w-10 bg-transparent text-xs outline-none border text-center rounded-lg border-[rgba(255,255,255,.1)] text-[#DFD1B3]" type="nunmber" defaultValue={10} /></div>
+                                                <div className=" bg-[rgba(255,255,255,.1)] px-6 border border-[rgba(255,255,255,.2)] flex items-center text-xs rounded-2xl cursor-pointer hover:text-black hover:bg-[#DFD1B3]">1</div>
+                                                <div className=" bg-[rgba(255,255,255,.1)] px-6 border border-[rgba(255,255,255,.2)] flex items-center text-xs rounded-2xl cursor-pointer hover:text-black hover:bg-[#DFD1B3]">5</div>
+                                                <div className=" bg-[rgba(255,255,255,.1)] px-6 border border-[rgba(255,255,255,.2)] flex items-center text-xs rounded-2xl cursor-pointer hover:text-black hover:bg-[#DFD1B3]">10</div>
                                             </div>
+                                        </div>
                                         </div>
                                         <div className=" px-8 py-1 bg-white text-black text-center rounded-3xl w-full cursor-pointer mt-4 font-bold hover:text-[#e8b23e]">
                                             Mint
