@@ -55,3 +55,7 @@ font-family: led;
     width: 600px;
     padding: 30px 40px !important;
 }
+
+.ant-modal{
+    margin-bottom: 200px;
+}
