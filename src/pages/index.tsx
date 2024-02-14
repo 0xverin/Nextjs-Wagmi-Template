@@ -87,16 +87,21 @@ const Home: NextPage = () => {
                     </div>
                     {/* right */}
 
-                    <div className=" w-full flex flex-col justify-between relative rounded-tr-3xl"
+                    <div className=" w-full flex flex-col justify-between relative"
                         style={{
-                            // backgroundImage: `url(${bgmax.src})`,
+                            borderTopRightRadius:"3rem",
                             backgroundSize: "100% 100%",
+                            overflow: "hidden"
                             // maskImage: "image(url(mask.png), skyblue)"
                         }}
                     >
-                        <video className="absolute top-0 right-0 left-0 bottom-0 -z-1 rounded-tr-3xl h-full w-screen objectfit" autoPlay loop muted src="https://vpn.4everland.store/loongcity-webvideo2.mp4">
+                        <video className="absolute top-0 right-0 left-0 bottom-0 -z-1 h-full w-screen objectfit" autoPlay loop muted src="https://vpn.4everland.store/loongcity-webvideo2.mp4" style={{
+                            borderTopRightRadius: "3rem",
+                        }}>
                         </video>
-                        <div className="pr-2 pb-2 bg-black absolute top-0 rounded-ee-3xl">
+                        <div className="pr-2 pb-2 bg-black absolute top-0" style={{
+                            borderEndEndRadius: "3rem"
+                        }}>
                             <div className=" absolute bottom-[-55px]">
                                 <Image src={decoratepng.src} width={50} height={50}></Image>
                             </div>
@@ -108,7 +113,9 @@ const Home: NextPage = () => {
                                 backgroundSize: "50% 100%",
                                 backgroundPosition: "right",
                                 backgroundRepeat: "no-repeat",
-                                backgroundColor: "rgb(0,0,0)"
+                                backgroundColor: "rgb(0,0,0)",
+                                borderEndEndRadius: "3rem",
+                                overflow: "hidden"
                             }}>
 
                                 <Image width={700} height={100} src={Ten.src} alt="" />
@@ -128,19 +135,23 @@ const Home: NextPage = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="pr-2 pt-2 absolute bottom-0 bg-black rounded-tr-3xl">
+                        <div className="pr-2 pt-2 absolute bottom-0 bg-black" style={{
+                            borderTopRightRadius: "3rem",
+                        }}>
                             <div className=" absolute right-[-53px] bottom-[-6px]" style={{
+                                transform: "rotate(270deg)",
+                            }}>
+                                <Image src={decoratepng.src} width={50} height={50}></Image>
+                            </div>
+                            <div className=" absolute top-[-53px]" style={{
                                 transform: "rotate(270deg)"
                             }}>
                                 <Image src={decoratepng.src} width={50} height={50}></Image>
                             </div>
-                            <div className=" absolute top-[-54px]" style={{
-                                transform: "rotate(270deg)"
+                            <div className="flex justify-between " style={{
+                                 borderTopRightRadius: "3rem",
+                                 overflow: "hidden"
                             }}>
-                                <Image src={decoratepng.src} width={50} height={50}></Image>
-                            </div>
-
-                            <div className="flex justify-between ">
                                 <div className="flex gap-4 pr-4 pt-4  outline-8" style={{
                                     backgroundImage: `url(${longbg2.src})`,
                                     backgroundSize: "50% 100%",
@@ -207,7 +218,9 @@ const Home: NextPage = () => {
 
                             </div>
                         </div>
-                        <div className="pl-2 pt-2 rounded-tl-3xl absolute right-0 bottom-0 bg-black">
+                        <div className="pl-2 pt-2 rounded-tl-3xl absolute right-0 bottom-0 bg-black" style={{
+                            borderTopLeftRadius: "3rem",
+                        }}>
                             <div className=" absolute top-[-55px] right-0 rotate-180">
                                 <Image src={decoratepng.src} width={50} height={50}></Image>
                             </div>
@@ -215,7 +228,9 @@ const Home: NextPage = () => {
                                 <Image src={decoratepng.src} width={50} height={50}></Image>
                             </div>
                             <div className="pt-4 pl-4 " style={{
-                                backgroundColor: "rgb(0,0,0)"
+                                backgroundColor: "rgb(0,0,0)",
+                                borderTopLeftRadius: "3rem",
+                                overflow: "hidden"
                             }}>
                                 <Image width={150} height={100} src={logobig.src} alt="" />
                             </div>
