@@ -166,7 +166,7 @@ const Home: NextPage = () => {
                                             </div>
                                             <div>
                                                 <div className=" text-sm text-[rgba(255,255,255,.4)]">01-Status</div>
-                                                <div className="gold">Whiter Mint</div>
+                                                <div className="gold">White List Mint</div>
                                                 <div className=" text-xs flex gap-2 gold">
                                                     <div>0.05ETH</div>
                                                     <div>February 16, 2024</div>
