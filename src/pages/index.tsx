@@ -95,7 +95,7 @@ const Home: NextPage = () => {
                             // maskImage: "image(url(mask.png), skyblue)"
                         }}
                     >
-                        <video className="absolute top-0 right-0 left-0 bottom-0 -z-1 h-full w-screen objectfit" autoPlay loop muted src="https://vpn.4everland.store/loongcity-webvideo2.mp4" style={{
+                        <video className="absolute top-0 right-0 left-0 bottom-0 -z-1 h-full w-screen objectfit opacity-50" autoPlay loop muted src="https://vpn.4everland.store/loongcity-webvideo2.mp4" style={{
                             borderTopRightRadius: "3rem",
                         }}>
                         </video>
