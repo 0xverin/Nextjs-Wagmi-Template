@@ -128,14 +128,6 @@ const Home: NextPage = () => {
                                 </div></div>
                             <div className="rounded-full hover:text-[#e8b23e] cursor-pointer relative flex items-center">
                                 <BasciConnect></BasciConnect>
-                                {/* { isDisconnected && <FaWallet className="m-4"  onClick={() => openConnectModal()}/>}
-                               { isConnecting && <AiOutlineLoading3Quarters className="animate-spin p-4"/>}
-                               { isConnected && !openUserDetails && <BsPersonCircle className="m-4" onMouseMove={()=>setOpenUserDetails(true)}/>}
-                               { openUserDetails && <div className="p-4 rounded-sm absolute text-sm z-50 bg-red-500 h-[32px] flex justify-center gap-2 items-center" onMouseLeave={()=>setOpenUserDetails(false)}>
-                                {`${address.slice(0,5)}...${address.slice(address.length-5,address.length)}`} 
-                                <div><BsPersonCircle></BsPersonCircle></div>
-                               </div> } */}
-
                             </div>
                         </div>
                     </div>
@@ -258,11 +250,11 @@ const Home: NextPage = () => {
                                             </div>
                                             <div>
                                                 <div className=" text-gray-400 text-xs anony">Amount</div>
-                                                <div className="flex justify-between gap-1">
-                                                    <div className=""><input className="w-10 bg-transparent text-xs outline-none border text-center rounded-lg border-[rgba(255,255,255,.1)] text-[#DFD1B3]" type="nunmber" defaultValue={10} /></div>
+                                                <div className="flex gap-2">
+                                                    {/* <div className=""><input className="w-10 bg-transparent text-xs outline-none border text-center rounded-lg border-[rgba(255,255,255,.1)] text-[#DFD1B3]" type="nunmber" defaultValue={10} /></div> */}
                                                     <div className=" bg-[rgba(255,255,255,.1)] px-6 border border-[rgba(255,255,255,.2)] flex items-center text-xs rounded-2xl cursor-pointer hover:text-black hover:bg-[#DFD1B3]">1</div>
-                                                    <div className=" bg-[rgba(255,255,255,.1)] px-6 border border-[rgba(255,255,255,.2)] flex items-center text-xs rounded-2xl cursor-pointer hover:text-black hover:bg-[#DFD1B3]">5</div>
-                                                    <div className=" bg-[rgba(255,255,255,.1)] px-6 border border-[rgba(255,255,255,.2)] flex items-center text-xs rounded-2xl cursor-pointer hover:text-black hover:bg-[#DFD1B3]">10</div>
+                                                    <div className=" bg-[rgba(255,255,255,.1)] px-6 border border-[rgba(255,255,255,.2)] flex items-center text-xs rounded-2xl cursor-pointer hover:text-black hover:bg-[#DFD1B3]">2</div>
+                                                    {/* <div className=" bg-[rgba(255,255,255,.1)] px-6 border border-[rgba(255,255,255,.2)] flex items-center text-xs rounded-2xl cursor-pointer hover:text-black hover:bg-[#DFD1B3]">10</div> */}
                                                 </div>
                                             </div>
                                         </div>
