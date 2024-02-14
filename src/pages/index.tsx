@@ -153,7 +153,7 @@ const Home: NextPage = () => {
                                  borderTopRightRadius: "2rem",
                                  overflow: "hidden"
                             }}>
-                                <div className="flex gap-8 pr-4 pt-4  outline-8" style={{
+                                <div className="flex gap-12 pr-4 pt-4  outline-8" style={{
                                     backgroundImage: `url(${longbg2.src})`,
                                     backgroundSize: "50% 100%",
                                     backgroundPosition: "right",
