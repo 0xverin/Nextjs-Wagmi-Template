@@ -117,15 +117,15 @@ const Home: NextPage = () => {
                         <div className="text-xl flex flex-col gap-8 justify-center items-center">
                             <div className=" flex flex-col gap-4 ">
                                 <div className=" hover:opacity-60">
-                                    <a href="">  <RiTwitterXFill /></a>
-
+                                    <a href="https://twitter.com/LoongCity">  <RiTwitterXFill /></a>
                                 </div>
-                                <div className=" hover:opacity-60">
+                                {/* <div className=" hover:opacity-60">
                                     <a href=""><FaDiscord /></a>
                                 </div>
                                 <div className=" hover:opacity-60">
                                     <a href=""><FaTelegram /></a>
-                                </div></div>
+                                </div>*/}
+                                </div> 
                             <div className="rounded-full hover:text-[#e8b23e] cursor-pointer relative flex items-center">
                                 <BasciConnect></BasciConnect>
                             </div>
@@ -172,11 +172,11 @@ const Home: NextPage = () => {
                                     </div>
                                     <div className="flex justify-between gap-2 items-center">
                                         <div className=" px-8 py-1 bg-white text-black text-center rounded-3xl w-full cursor-pointer hover:text-[#e8b23e] font-bold" onClick={showMoreDetails}>More</div>
-                                        <a href="">
+                                        {/* <a href="">
                                             <div className="p-2 bg-white rounded-full text-black justify-center flex items-center">
                                                 <FaBook />
                                             </div>
-                                        </a>
+                                        </a> */}
                                     </div>
                                 </div>
                             </div>
