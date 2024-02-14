@@ -12,6 +12,15 @@
     src: url("./AnonymousPro-Regular.ttf");
 }
 
+@font-face {
+    font-family: note;
+    src: url("./NotoSerifSC-Regular.otf");
+}
+
+.note{
+    font-family: note;
+}
+
 .anony {
     font-family: anony;
 }

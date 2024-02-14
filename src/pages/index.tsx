@@ -122,7 +122,7 @@ const Home: NextPage = () => {
                                 <Image width={400} height={100} src={Ten.src} alt="" className="rounded-xl" />
 
                                 <div className=" flex flex-col justify-between gap-4">
-                                    <div className=" text-xs gold">
+                                    <div className=" text-xs gold note leading-4">
                                         <span className=" text-lg">龍城</span>（Loong City）是一座架空的中國城市。傳統與未來的各種元素在這裏交織和碰撞，由此產生了許許多多未知的可能。蒸汽朋克與傳統中國構成了龍城的核心元素。每個龍城PFP都是這個架空世界的入場券。
                                     </div>
                                     <div className="flex justify-between gap-2 items-center">
