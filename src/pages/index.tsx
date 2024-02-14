@@ -119,11 +119,11 @@ const Home: NextPage = () => {
                                 overflow: "hidden"
                             }}>
 
-                                <Image width={700} height={100} src={Ten.src} alt="" />
+                                <Image width={400} height={100} src={Ten.src} alt="" className="rounded-xl" />
 
                                 <div className=" flex flex-col justify-between gap-4">
                                     <div className=" text-xs gold">
-                                        <span className=" text-lg">龍城</span>（Loong City）是一座架空的中国城市。传统与未来的各种元素在这里交织和碰撞，由此产生了许许多多未知的可能。蒸汽朋克与传统中国构成了龍城的核心元素。每个龍城PFP都是这个架空世界的入场券。
+                                        <span className=" text-lg">龍城</span>（Loong City）是一座架空的中國城市。傳統與未來的各種元素在這裏交織和碰撞，由此產生了許許多多未知的可能。蒸汽朋克與傳統中國構成了龍城的核心元素。每個龍城PFP都是這個架空世界的入場券。
                                     </div>
                                     <div className="flex justify-between gap-2 items-center">
                                         <div className=" px-8 py-1 bg-white text-black text-center rounded-3xl w-full cursor-pointer hover:text-[#e8b23e] font-bold">More</div>
@@ -166,7 +166,7 @@ const Home: NextPage = () => {
                                                 <Image src={lineActive.src} width={10} height={70} alt="" />
                                             </div>
                                             <div>
-                                                <div className=" text-sm text-[rgba(255,255,255,.4)] pb-2">01-Status</div>
+                                                <div className=" text-sm text-[rgba(255,255,255,.4)] pb-2 anony">01-Status</div>
                                                 <div className="gold">White List Mint</div>
                                                 <div className=" text-xs flex gap-2 gold">
                                                     <div>FREE MINT</div>
@@ -179,7 +179,7 @@ const Home: NextPage = () => {
                                                 <Image src={line.src} width={10} height={70} alt="" />
                                             </div>
                                             <div>
-                                                <div className=" text-sm text-[rgba(255,255,255,.4)] pb-2">02-Status</div>
+                                                <div className=" text-sm text-[rgba(255,255,255,.4)] pb-2 anony">02-Status</div>
                                                 <div className="gold">Public Mint</div>
                                                 <div className=" text-xs flex gap-2 gold">
                                                     <div>0.025 ETH</div>
@@ -192,11 +192,11 @@ const Home: NextPage = () => {
                                         <div className="flex flex-col gap-4">
                                         <div className="flex gap-4 justify-between">
                                             <div>
-                                                <div className=" text-gray-400 text-xs">Minted</div>
+                                                <div className=" text-gray-400 text-xs anony">Minted</div>
                                                 <div>100/1000</div>
                                             </div>
                                             <div>
-                                                <div className=" text-gray-400 text-xs">Price</div>
+                                                <div className=" text-gray-400 text-xs anony">Price</div>
                                                 <div className=" flex justify-center items-center">0.0025
 
                                                     <FaEthereum />
@@ -204,7 +204,7 @@ const Home: NextPage = () => {
                                             </div>
                                         </div>
                                         <div>
-                                            <div className=" text-gray-400 text-xs">Amount</div>
+                                            <div className=" text-gray-400 text-xs anony">Amount</div>
                                             <div className="flex justify-between gap-1">
                                                 <div className=""><input className="w-10 bg-transparent text-xs outline-none border text-center rounded-lg border-[rgba(255,255,255,.1)] text-[#DFD1B3]" type="nunmber" defaultValue={10} /></div>
                                                 <div className=" bg-[rgba(255,255,255,.1)] px-6 border border-[rgba(255,255,255,.2)] flex items-center text-xs rounded-2xl cursor-pointer hover:text-black hover:bg-[#DFD1B3]">1</div>

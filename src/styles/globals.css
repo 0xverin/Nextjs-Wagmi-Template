@@ -7,6 +7,15 @@
 	src:url( './Cinzel-VariableFont_wght.ttf' ) 
 }
 
+@font-face {
+    font-family: anony;
+    src: url("./AnonymousPro-Regular.ttf");
+}
+
+.anony {
+    font-family: anony;
+}
+
 html,
 body {
     padding: 0;
