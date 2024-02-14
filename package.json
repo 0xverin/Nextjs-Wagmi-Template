@@ -10,6 +10,7 @@
         "typechain": "typechain --out-dir src/config/abi/types --target=ethers-v5 \"src/config/abi/*.json\""
     },
     "dependencies": {
+        "@cleverage/responsive-video-background": "^1.2.0",
         "@rainbow-me/rainbowkit": "^0.5.0",
         "@typechain/ethers-v5": "^10.1.0",
         "ethers": "^5.7.0",

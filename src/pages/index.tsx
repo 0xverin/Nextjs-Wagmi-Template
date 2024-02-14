@@ -20,8 +20,6 @@ import decoratepng from "../images/decorate.jpg"
 import { BsPersonCircle } from "react-icons/bs";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
-import loongvideo from "../images/loongcity-webvideo.mp4"
-
 import {
     useConnectModal,
     useAccountModal,
@@ -33,9 +31,9 @@ import { useAccount } from 'wagmi'
 import { useState } from "react";
 
 const Home: NextPage = () => {
-    const {address,isConnected,isDisconnected,isConnecting} = useAccount();
+    const { address, isConnected, isDisconnected, isConnecting } = useAccount();
     const { openConnectModal } = useConnectModal();
-    const [openUserDetails,setOpenUserDetails] = useState(false)
+    const [openUserDetails, setOpenUserDetails] = useState(false)
 
     return (
         <div>
@@ -53,13 +51,6 @@ const Home: NextPage = () => {
             <div className="h-screen p-16" style={{
                 minWidth: "1200px"
             }}>
-
-<video className="video-bg" autoPlay loop>
-    <source src={require("../images/loongcity-webvideo.mp4").src} type="video/mp4"/>
-    {/* {loongvideo.src} */}
-</video>
-
-                {/* <BasciConnect></BasciConnect> */}
                 <div className="flex h-full gap-8">
                     {/* left */}
                     <div className="flex flex-col items-center justify-between">
@@ -83,7 +74,7 @@ const Home: NextPage = () => {
                                 </div></div>
                             <div className="rounded-full hover:text-[#e8b23e] cursor-pointer relative flex items-center">
                                 <BasciConnect></BasciConnect>
-                               {/* { isDisconnected && <FaWallet className="m-4"  onClick={() => openConnectModal()}/>}
+                                {/* { isDisconnected && <FaWallet className="m-4"  onClick={() => openConnectModal()}/>}
                                { isConnecting && <AiOutlineLoading3Quarters className="animate-spin p-4"/>}
                                { isConnected && !openUserDetails && <BsPersonCircle className="m-4" onMouseMove={()=>setOpenUserDetails(true)}/>}
                                { openUserDetails && <div className="p-4 rounded-sm absolute text-sm z-50 bg-red-500 h-[32px] flex justify-center gap-2 items-center" onMouseLeave={()=>setOpenUserDetails(false)}>
@@ -95,13 +86,17 @@ const Home: NextPage = () => {
                         </div>
                     </div>
                     {/* right */}
+
                     <div className=" w-full flex flex-col justify-between relative rounded-tr-3xl"
                         style={{
-                            backgroundImage: `url(${bgmax.src})`,
+                            // backgroundImage: `url(${bgmax.src})`,
                             backgroundSize: "100% 100%",
                             maskImage: "image(url(mask.png), skyblue)"
                         }}
                     >
+                        <video className="absolute top-0 right-0 left-0 bottom-0 -z-1 rounded-tr-3xl h-full w-screen" autoPlay loop muted>
+                            <source src="https://github.com/perosonal-kasoqian/Nextjs-Wagmi-Template/raw/main/src/images/loongcity-webvideo.mp4" type="video/mp4" />
+                        </video>
                         <div className="pr-2 pb-2 bg-black absolute top-0 rounded-ee-3xl">
                             <div className=" absolute bottom-[-55px]">
                                 <Image src={decoratepng.src} width={50} height={50}></Image>
