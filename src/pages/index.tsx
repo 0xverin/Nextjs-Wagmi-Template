@@ -103,7 +103,7 @@ const Home: NextPage = () => {
             <Script src="https://cdn.tailwindcss.com"></Script>
             <div className="h-screen p-16" style={{
                 minWidth: "1200px",
-                minHeight: "730px"
+                minHeight: "760px"
             }}>
                 <div className="flex h-full gap-8">
                     {/* left */}
