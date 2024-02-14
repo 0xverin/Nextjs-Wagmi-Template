@@ -19,3 +19,7 @@ font-family: led;
 .gold {
     color: #DFD1B3;
 }
+
+.objectfit{
+    object-fit:fill;
+}

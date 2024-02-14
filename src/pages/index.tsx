@@ -94,8 +94,7 @@ const Home: NextPage = () => {
                             maskImage: "image(url(mask.png), skyblue)"
                         }}
                     >
-                        <video className="absolute top-0 right-0 left-0 bottom-0 -z-1 rounded-tr-3xl h-full w-screen" autoPlay loop muted>
-                            <source src="https://github.com/perosonal-kasoqian/Nextjs-Wagmi-Template/raw/main/src/images/loongcity-webvideo.mp4" type="video/mp4" />
+                        <video className="absolute top-0 right-0 left-0 bottom-0 -z-1 rounded-tr-3xl h-full w-screen objectfit" autoPlay loop muted src="https://github.com/perosonal-kasoqian/Nextjs-Wagmi-Template/raw/main/src/images/loongcity-webvideo.mp4">
                         </video>
                         <div className="pr-2 pb-2 bg-black absolute top-0 rounded-ee-3xl">
                             <div className=" absolute bottom-[-55px]">
