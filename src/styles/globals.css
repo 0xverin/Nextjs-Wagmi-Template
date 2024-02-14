@@ -41,3 +41,17 @@ font-family: led;
 .objectfit{
     object-fit:fill;
 }
+
+.ant-modal-content,.ant-modal-header,.ant-modal-title{
+    background-color: black !important;
+    color: rgba(255,255,255,.4) !important;
+}
+
+.ant-modal-close-icon{
+    color: rgba(255,255,255,.4) !important;
+}
+
+.ant-modal-content{
+    width: 600px;
+    padding: 30px 40px !important;
+}

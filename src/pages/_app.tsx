@@ -5,6 +5,10 @@ import { useEffect, useState } from "react";
 import "styles/globals.css";
 import "styles/rainbowkit.css";
 import { WagmiConfig } from "wagmi";
+import { useModal } from '@ebay/nice-modal-react';
+import NiceModal from "@ebay/nice-modal-react";
+import React from "react";
+import { Modal } from "antd";
 
 function MyApp({ Component, pageProps }: AppProps) {
     const [mounted, setMounted] = useState(false);
@@ -13,11 +17,15 @@ function MyApp({ Component, pageProps }: AppProps) {
     if (!mounted) return null;
 
     return (
-        <WagmiConfig client={wagmiClient}>
-            <RainbowKitProvider chains={chains}>
-                <Component {...pageProps} />
-            </RainbowKitProvider>
-        </WagmiConfig>
+        <React.StrictMode>
+            <NiceModal.Provider>
+                <WagmiConfig client={wagmiClient}>
+                    <RainbowKitProvider chains={chains}>
+                        <Component {...pageProps} />
+                    </RainbowKitProvider>
+                </WagmiConfig>
+            </NiceModal.Provider>
+        </React.StrictMode>
     );
 }
 
