@@ -1,3 +1,25 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
+    "no-unused-vars": "off",
+    "no-undef": "off",
+    "no-use-before-define": "off",
+    "no-constant-condition": "off",
+    "no-prototype-builtins": "off",
+    "no-restricted-globals": "off",
+    "no-async-promise-executor": "off",
+
+    "import/no-anonymous-default-export": "off",
+    "import/no-unresolved": "off",
+    "import/no-named-as-default": "off",
+    "import/no-named-as-default-member": "off",
+    "import/no-extraneous-dependencies": "off",
+    "import/no-duplicates": "off",
+    // hook
+    "react-hooks/rules-of-hooks": "off",
+    "react-hooks/exhaustive-deps": "off",
+    // jsx
+  },
 }
