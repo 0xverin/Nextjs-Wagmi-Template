@@ -8,8 +8,9 @@ export class Providers {
      * Returns a provider url for a given network
      */
     public static getProviderUrl(chainId: ChainId) {
+        console.log(chainId)
         const [url] = RPC.getNodeUrls(chainId);
-
+        
         return url;
     }
 
@@ -17,6 +18,7 @@ export class Providers {
      * Returns a static provider for a given network
      */
     public static getStaticProvider(chainId: ChainId) {
+
         if (!this._providerCache[chainId])
             this._providerCache[chainId] = new StaticJsonRpcProvider(this.getProviderUrl(chainId));
 

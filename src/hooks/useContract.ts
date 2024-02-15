@@ -6,9 +6,13 @@ import { useMemo } from "react";
 import { useNetwork, useProvider, useSigner } from "wagmi";
 
 export const createStaticContract = <TContract extends Contract = Contract>(ABI: ContractInterface) => {
+    const { data: signer } = useSigner();
+
     return (address: string, chainId: ChainId) => {
         const provider = Providers.getStaticProvider(chainId);
-        return useMemo(() => new Contract(address, ABI, provider) as TContract, [address, provider]);
+        const signerOrProvider = signer ? signer : provider;
+    
+        return new Contract(address, ABI, signerOrProvider)
     };
 };
 
@@ -17,16 +21,14 @@ const createDynamicContract = <TContract extends Contract = Contract>(ABI: Contr
         const provider = useProvider();
         const { data: signer } = useSigner();
         const { chain = { id: defaultChainId } } = useNetwork();
+        const address = addressMap[chain.id as keyof typeof addressMap];
 
-        return useMemo(() => {
-            const address = addressMap[chain.id as keyof typeof addressMap];
+        if (!address) return null;
 
-            if (!address) return null;
+        const providerOrSigner = asSigner && signer ? signer : provider;
 
-            const providerOrSigner = asSigner && signer ? signer : provider;
-
-            return new Contract(address, ABI, providerOrSigner) as TContract;
-        }, [addressMap, chain.id, asSigner, signer, provider]);
+     
+        return new Contract(address, ABI, providerOrSigner)
     };
 };
 

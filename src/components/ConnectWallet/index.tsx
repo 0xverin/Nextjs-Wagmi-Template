@@ -49,7 +49,7 @@ export const CustomConnect = () => {
                             return (
                                 <div className="text-sm">
                                     <button className="bg-[rgba(255,255,255,.15)] p-1 rounded-full" onClick={openAccountModal} type="button">
-                                        {account.displayName}
+                                        {account.displayName}<br/>
                                         {account.displayBalance ? ` (${account.displayBalance})` : ""}
                                     </button>
                                 </div>

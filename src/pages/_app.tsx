@@ -10,6 +10,9 @@ import NiceModal from "@ebay/nice-modal-react";
 import React from "react";
 import { Modal } from "antd";
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 function MyApp({ Component, pageProps }: AppProps) {
     const [mounted, setMounted] = useState(false);
 
@@ -22,6 +25,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                 <WagmiConfig client={wagmiClient}>
                     <RainbowKitProvider chains={chains}>
                         <Component {...pageProps} />
+                        <ToastContainer theme="dark"/>
                     </RainbowKitProvider>
                 </WagmiConfig>
             </NiceModal.Provider>

@@ -19,6 +19,7 @@ import Script from 'next/script'
 import decoratepng from "../images/decorate.jpg"
 import { BsPersonCircle } from "react-icons/bs";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import { createStaticContract } from "hooks/useContract";
 
 import {
     useConnectModal,
@@ -30,10 +31,15 @@ import titlebg from "../images/title.jpg"
 
 import Head from "next/head";
 import { useAccount } from 'wagmi'
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Modal } from "antd";
 import NiceModal, { useModal } from "@ebay/nice-modal-react";
 import bgModal from "../images/bg-modal.png"
+import { ChainId } from "config/constants/chainId";
+import { parse } from "path";
+import { toast } from "react-toastify";
+
+
 
 const ShowMoreCom = NiceModal.create(({ }) => {
     // Use a hook to manage the modal state
@@ -42,7 +48,7 @@ const ShowMoreCom = NiceModal.create(({ }) => {
         <Modal
             title={<div className="flex gap-2 items-center"><img className=" w-[40px] h-[40px]" src={titlebg.src} alt="" /> Loong City</div>}
             // onOk={() => modal.hide()}
-            visible={modal.visible}
+            open={modal.visible}
             onCancel={() => modal.hide()}
             afterClose={() => modal.remove()}
             footer={null}
@@ -51,8 +57,8 @@ const ShowMoreCom = NiceModal.create(({ }) => {
         >
             <div className=" text-3xl gold my-4">欢迎来到 龍城</div>
             <div style={{
-                    lineHeight: "1.5",
-                }}>
+                lineHeight: "1.5",
+            }}>
                 <span className=" gold text-xl">龍城（Loong City）</span>
                 是一座架空的中国城市。传统与未来的各种元素在这里交织和碰撞，由此产生了许许多多未知的可能。蒸汽朋克与传统中国构成了龍城的核心元素。每个龍城PFP都是这个架空世界的入场券。</div>
             <div className=" w-full my-4">
@@ -80,12 +86,785 @@ const Home: NextPage = () => {
     const { address, isConnected, isDisconnected, isConnecting } = useAccount();
     const { openConnectModal } = useConnectModal();
     const [openUserDetails, setOpenUserDetails] = useState(false)
+    const [totalMinted, setTotalMinted] = useState(0)
 
     const showMoreCom = useModal(ShowMoreCom);
+    const LoongCity = createStaticContract([
+        {
+            "inputs": [],
+            "stateMutability": "nonpayable",
+            "type": "constructor"
+        },
+        {
+            "inputs": [],
+            "name": "AlreadyExists",
+            "type": "error"
+        },
+        {
+            "inputs": [],
+            "name": "InvalidOwner",
+            "type": "error"
+        },
+        {
+            "inputs": [],
+            "name": "InvalidRecipient",
+            "type": "error"
+        },
+        {
+            "inputs": [],
+            "name": "InvalidSender",
+            "type": "error"
+        },
+        {
+            "inputs": [],
+            "name": "NotFound",
+            "type": "error"
+        },
+        {
+            "inputs": [],
+            "name": "Unauthorized",
+            "type": "error"
+        },
+        {
+            "inputs": [],
+            "name": "UnsafeRecipient",
+            "type": "error"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "owner",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "spender",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Approval",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "owner",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "operator",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "approved",
+                    "type": "bool"
+                }
+            ],
+            "name": "ApprovalForAll",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "from",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "to",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "ERC20Transfer",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "owner",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "spender",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "id",
+                    "type": "uint256"
+                }
+            ],
+            "name": "ERC721Approval",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "user",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "newOwner",
+                    "type": "address"
+                }
+            ],
+            "name": "OwnershipTransferred",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "from",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "to",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "id",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Transfer",
+            "type": "event"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "name": "allowance",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "spender",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "amountOrId",
+                    "type": "uint256"
+                }
+            ],
+            "name": "approve",
+            "outputs": [
+                {
+                    "internalType": "bool",
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "name": "balanceOf",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "baseTokenURI",
+            "outputs": [
+                {
+                    "internalType": "string",
+                    "name": "",
+                    "type": "string"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "dataURI",
+            "outputs": [
+                {
+                    "internalType": "string",
+                    "name": "",
+                    "type": "string"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "decimals",
+            "outputs": [
+                {
+                    "internalType": "uint8",
+                    "name": "",
+                    "type": "uint8"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "name": "getApproved",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "name": "isApprovedForAll",
+            "outputs": [
+                {
+                    "internalType": "bool",
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "_amount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "mint",
+            "outputs": [],
+            "stateMutability": "payable",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "minted",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "name",
+            "outputs": [
+                {
+                    "internalType": "string",
+                    "name": "",
+                    "type": "string"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "owner",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "id",
+                    "type": "uint256"
+                }
+            ],
+            "name": "ownerOf",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "owner",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "revokeOwnership",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "from",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "to",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "id",
+                    "type": "uint256"
+                }
+            ],
+            "name": "safeTransferFrom",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "from",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "to",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "id",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "bytes",
+                    "name": "data",
+                    "type": "bytes"
+                }
+            ],
+            "name": "safeTransferFrom",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "operator",
+                    "type": "address"
+                },
+                {
+                    "internalType": "bool",
+                    "name": "approved",
+                    "type": "bool"
+                }
+            ],
+            "name": "setApprovalForAll",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "string",
+                    "name": "_dataURI",
+                    "type": "string"
+                }
+            ],
+            "name": "setDataURI",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "_epoch",
+                    "type": "uint256"
+                }
+            ],
+            "name": "setEpoch",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "string",
+                    "name": "_name",
+                    "type": "string"
+                },
+                {
+                    "internalType": "string",
+                    "name": "_symbol",
+                    "type": "string"
+                }
+            ],
+            "name": "setNameSymbol",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "string",
+                    "name": "_tokenURI",
+                    "type": "string"
+                }
+            ],
+            "name": "setTokenURI",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "target",
+                    "type": "address"
+                },
+                {
+                    "internalType": "bool",
+                    "name": "state",
+                    "type": "bool"
+                }
+            ],
+            "name": "setWhitelist",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address[]",
+                    "name": "users",
+                    "type": "address[]"
+                }
+            ],
+            "name": "setWhitelist",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "symbol",
+            "outputs": [
+                {
+                    "internalType": "string",
+                    "name": "",
+                    "type": "string"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "id",
+                    "type": "uint256"
+                }
+            ],
+            "name": "tokenURI",
+            "outputs": [
+                {
+                    "internalType": "string",
+                    "name": "",
+                    "type": "string"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "totalMinted",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "totalSupply",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "to",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "transfer",
+            "outputs": [
+                {
+                    "internalType": "bool",
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "from",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "to",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "amountOrId",
+                    "type": "uint256"
+                }
+            ],
+            "name": "transferFrom",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "_owner",
+                    "type": "address"
+                }
+            ],
+            "name": "transferOwnership",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "name": "whitelist",
+            "outputs": [
+                {
+                    "internalType": "bool",
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "name": "whitelists",
+            "outputs": [
+                {
+                    "internalType": "bool",
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "withdraw",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "withdrawETH",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        }
+    ])
+    const loongCity = LoongCity("0x74C3254562E996A1393cc8385aB4d2772ab64DB9", 5);
 
     const showMoreDetails = () => {
-        // Show a modal with arguments passed to the component as props
         showMoreCom.show()
+    }
+
+    const getAllData = async () => {
+        const minted = await loongCity.totalMinted()
+        setTotalMinted(minted.toNumber())
+    }
+
+    useEffect(() => {
+       const timer =  setInterval(() => {
+            getAllData()
+        }, 5000)
+        return () => {
+            clearInterval(timer)
+        }
+    }, [])
+
+    const mint = async () => {
+        if (isConnected) {
+            try {
+                await loongCity.mint(1)
+            } catch (error) {
+                try {
+                    const e = error.toString().split('reason="')[1].split('",')[0].split(':')[1]
+                    toast.error(e)
+                } catch (error) {
+                    console.log(error)
+                }
+            }
+
+        } else {
+            openConnectModal()
+        }
     }
 
     return (
@@ -125,7 +904,7 @@ const Home: NextPage = () => {
                                 <div className=" hover:opacity-60">
                                     <a href=""><FaTelegram /></a>
                                 </div>*/}
-                                </div> 
+                            </div>
                             <div className="rounded-full hover:text-[#e8b23e] cursor-pointer relative flex items-center">
                                 <BasciConnect></BasciConnect>
                             </div>
@@ -238,11 +1017,11 @@ const Home: NextPage = () => {
                                             <div className="flex gap-4 justify-between">
                                                 <div>
                                                     <div className=" text-gray-400 text-xs anony">Minted</div>
-                                                    <div>0/1000</div>
+                                                    <div>{totalMinted}/1000</div>
                                                 </div>
                                                 <div>
                                                     <div className=" text-gray-400 text-xs anony">Price</div>
-                                                    <div className=" flex justify-center items-center">FREE 
+                                                    <div className=" flex justify-center items-center">FREE
                                                         <FaEthereum />
                                                     </div>
                                                 </div>
@@ -257,8 +1036,8 @@ const Home: NextPage = () => {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className=" px-8 py-1 bg-white text-black text-center rounded-3xl w-full cursor-pointer mt-4 font-bold hover:text-[#e8b23e]">
-                                            Coming Soon1
+                                        <div className=" px-8 py-1 bg-white text-black text-center rounded-3xl w-full cursor-pointer mt-4 font-bold hover:text-[#e8b23e]" onClick={mint}>
+                                            Mint
                                         </div>
                                     </div>
                                 </div>
