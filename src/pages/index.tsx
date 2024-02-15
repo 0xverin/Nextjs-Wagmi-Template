@@ -258,7 +258,7 @@ const Home: NextPage = () => {
                                             </div>
                                         </div>
                                         <div className=" px-8 py-1 bg-white text-black text-center rounded-3xl w-full cursor-pointer mt-4 font-bold hover:text-[#e8b23e]">
-                                            Coming Soon
+                                            Coming Soon1
                                         </div>
                                     </div>
                                 </div>
