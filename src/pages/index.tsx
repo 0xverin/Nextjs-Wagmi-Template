@@ -242,7 +242,7 @@ const Home: NextPage = () => {
                                                 </div>
                                                 <div>
                                                     <div className=" text-gray-400 text-xs anony">Price</div>
-                                                    <div className=" flex justify-center items-center">0.025
+                                                    <div className=" flex justify-center items-center">FREE 
 
                                                         <FaEthereum />
                                                     </div>
