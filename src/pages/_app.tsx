@@ -12,6 +12,7 @@ import { Modal } from "antd";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import '@rainbow-me/rainbowkit/styles.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [mounted, setMounted] = useState(false);
@@ -20,16 +21,18 @@ function MyApp({ Component, pageProps }: AppProps) {
   if (!mounted) return null;
 
   return (
-    <React.StrictMode>
-      <NiceModal.Provider>
+ 
         <WagmiConfig client={wagmiClient}>
           <RainbowKitProvider chains={chains}>
+          <React.StrictMode>
+      <NiceModal.Provider>
             <Component {...pageProps} />
             <ToastContainer theme="dark" />
+            </NiceModal.Provider>
+    </React.StrictMode>
           </RainbowKitProvider>
         </WagmiConfig>
-      </NiceModal.Provider>
-    </React.StrictMode>
+     
   );
 }
 
